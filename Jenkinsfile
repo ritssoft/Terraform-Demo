@@ -12,9 +12,9 @@ pipeline {
             }
         }
         
-        stage('PWD') {
+        stage('cd') {
             steps {
-                sh 'pwd'
+                sh 'cd aws-modules'
             }        
         }
 
@@ -24,9 +24,9 @@ pipeline {
             }        
         }
 
-        stage('terraform apply') {
+        stage('terraform plan') {
             steps {
-                sh 'terraform apply --auto-approve'
+                sh 'terraform plan'
             }
 
         }
