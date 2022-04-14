@@ -3,11 +3,11 @@ pipeline {
     tools {
   terraform 'Terraform-Installer'
 }
-
+/*
     environment { 
                 ID_RSA = credentials('id_rsa') 
 }
-
+*/
     stages {
                
         stage('terraform init') {
