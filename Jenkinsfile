@@ -1,11 +1,8 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-    }
+    tools {
+  terraform 'Terraform-Installer'
+}
+
 }
