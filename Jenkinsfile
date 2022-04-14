@@ -5,7 +5,7 @@ pipeline {
 }
 
     environment { 
-                AN_ACCESS_KEY = credentials('an_access_key_id') 
+                ID_RSA = credentials('id_rsa') 
 }
 
     stages {
