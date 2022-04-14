@@ -15,6 +15,7 @@ pipeline {
         stage('terraform init') {
             steps {
                 dir("aws-modules") {
+                sh 'pwd'
                 sh 'terraform init'
                 }
             }        
