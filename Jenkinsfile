@@ -21,6 +21,11 @@ pipeline {
         }
 
         stage('terraform plan') {
+
+            environment { 
+                ID_RSA = credentials('id_rsa') 
+            }
+
             steps {
                 dir("aws_modules") {
                 sh 'terraform plan'
