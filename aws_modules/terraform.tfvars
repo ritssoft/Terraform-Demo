@@ -1,0 +1,11 @@
+vm_name = "VM01-AWS-Module-Jenkins"
+vpc_name = "VPC-AWS-Module"
+vpc-cidr-block = "10.0.0.0/16"
+subnet-cidr-blocks = "10.0.20.0/24"
+az = "ap-southeast-2a"
+subnet-tags = ["Subnet1-AWS-Module"]
+env-prefix = "Terraform"
+instance_type = "t2.micro"
+public_key_location = "C:/Users/ritesh.e.agarwal/.ssh/id_rsa.pub"
+#subnet_id = ""
+key_name = "Terraform-SSH-Key-AWS-Module"
