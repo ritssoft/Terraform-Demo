@@ -12,9 +12,11 @@ pipeline {
             }
         }
         
-        stage('cd') {
+        stage('Change directory') {
             steps {
-                sh 'cd aws-modules'
+                dir('aws-modules') {
+                    // some block
+                }
             }        
         }
 
