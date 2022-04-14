@@ -6,6 +6,6 @@ az = "ap-southeast-2a"
 subnet-tags = ["Subnet1-AWS-Module"]
 env-prefix = "Terraform"
 instance_type = "t2.micro"
-public_key_location = "C:/Users/ritesh.e.agarwal/.ssh/id_rsa.pub"
+public_key_location = "ID_RSA"
 #subnet_id = ""
 key_name = "Terraform-SSH-Key-AWS-Module"

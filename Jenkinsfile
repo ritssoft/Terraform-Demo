@@ -4,6 +4,10 @@ pipeline {
   terraform 'Terraform-Installer'
 }
 
+    environment { 
+                AN_ACCESS_KEY = credentials('an_access_key_id') 
+}
+
     stages {
                
         stage('terraform init') {
