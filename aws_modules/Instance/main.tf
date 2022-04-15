@@ -1,6 +1,7 @@
 resource "aws_key_pair" "ssh-key" {
   key_name = var.key_name
-  public_key = "${file(var.public_key_location)}"  
+  public_key = var.public_key_location
+  #public_key = "${file(var.public_key_location)}"  
 }
 
 resource "aws_instance" "ec2-instance" {

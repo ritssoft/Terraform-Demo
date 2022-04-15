@@ -8,8 +8,6 @@ pipeline {
                 ID_RSA = credentials('id_rsa') 
 }
 */
-
-
     stages {
                
         stage('terraform init') {
@@ -22,17 +20,12 @@ pipeline {
             }        
         }
 
-        stage('terraform plan') {
+        stage('terraform plan and apply') {
             
             steps {
-                script {
-                    withCredentials([file(credentialsId: 'RSA_ID', variable: 'rsa')]) {                    
-                        dir("aws_modules") {
-                        sh "echo $rsa"
-                        sh "cp \$rsa /src/main/resources/rsa_id.pub"
-                        sh 'terraform plan'
-                        }
-                    }
+                dir("aws_modules") {
+                sh 'terraform plan'
+                sh 'terraform apply --auto-approve'
                 }
             }
 
