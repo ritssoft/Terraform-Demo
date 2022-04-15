@@ -8,6 +8,13 @@ pipeline {
                 ID_RSA = credentials('id_rsa') 
 }
 */
+
+withCredentials([file(credentialsId: 'rsa_id', variable: 'rsa')]) {
+   sh "echo $rsa"
+   sh "cp \$rsa /src/main/resources/rsa_id.pub"   
+}
+
+
     stages {
                
         stage('terraform init') {
@@ -21,11 +28,7 @@ pipeline {
         }
 
         stage('terraform plan') {
-
-            environment { 
-                ID_RSA = credentials('id_rsa') 
-            }
-
+            
             steps {
                 dir("aws_modules") {
                 sh 'terraform plan'
