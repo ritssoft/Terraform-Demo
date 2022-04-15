@@ -26,14 +26,13 @@ pipeline {
             
             steps {
                 script {
-                withCredentials([file(credentialsId: 'RSA_ID', variable: 'rsa')]) {
-                sh "echo $rsa"
-                sh "cp \$rsa /src/main/resources/rsa_id.pub"   
-                }
-                }
-
-                dir("aws_modules") {
-                sh 'terraform plan'
+                    withCredentials([file(credentialsId: 'RSA_ID', variable: 'rsa')]) {                    
+                        dir("aws_modules") {
+                        sh "echo $rsa"
+                        sh "cp \$rsa /src/main/resources/rsa_id.pub"
+                        sh 'terraform plan'
+                        }
+                    }
                 }
             }
 
