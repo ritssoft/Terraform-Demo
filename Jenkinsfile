@@ -26,7 +26,7 @@ pipeline {
             
             steps {
                 script {
-                withCredentials([file(credentialsId: 'rsa_id', variable: 'rsa')]) {
+                withCredentials([file(credentialsId: 'RSA_ID', variable: 'rsa')]) {
                 sh "echo $rsa"
                 sh "cp \$rsa /src/main/resources/rsa_id.pub"   
                 }
