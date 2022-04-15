@@ -13,8 +13,6 @@ withCredentials([file(credentialsId: 'rsa_id', variable: 'rsa')]) {
    sh "echo $rsa"
    sh "cp \$rsa /src/main/resources/rsa_id.pub"   
     }
-}
-
 
     stages {
                
@@ -38,4 +36,6 @@ withCredentials([file(credentialsId: 'rsa_id', variable: 'rsa')]) {
 
         }
     }
+}
+
 }
