@@ -1,4 +1,4 @@
-vm_name = "VM01-AWS-Module-Jenkins-pipe-auto4"
+vm_name = "VM01-AWS-Module-Jenkins-pipe-auto5"
 vpc_name = "VPC-AWS-Module"
 vpc-cidr-block = "10.0.0.0/16"
 subnet-cidr-blocks = "10.0.20.0/24"
