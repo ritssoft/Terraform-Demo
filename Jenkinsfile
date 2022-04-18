@@ -9,25 +9,22 @@ pipeline {
 }
 */
     stages {
-               
-        stage('terraform init') {
-            steps {
-                withCredentials([[
+        withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding', 
                     accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
                     credentialsId: 'AWS-CREDS', 
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]]
                 )
-                {
+        {       
+        stage('terraform init') {
                     dir("jenkins-pipeline") {
                     sh 'pwd'
                     sh 'ls -ltr'
                     sh 'terraform init'
                     }
-                }        
-            }
-        }
+                }                    
+        
         stage('terraform plan and apply') {
             
             steps {
@@ -37,6 +34,7 @@ pipeline {
                 }
             }
 
+        }
         }
     }
 }
