@@ -12,7 +12,7 @@ pipeline {
                
         stage('terraform init') {
             steps {
-                dir("aws_modules") {
+                dir("jenkins-pipeline") {
                 sh 'pwd'
                 sh 'ls -ltr'
                 sh 'terraform init'
@@ -23,7 +23,7 @@ pipeline {
         stage('terraform plan and apply') {
             
             steps {
-                dir("aws_modules") {
+                dir("jenkins-pipeline") {
                 sh 'terraform plan'
                 sh 'terraform apply --auto-approve'
                 }
