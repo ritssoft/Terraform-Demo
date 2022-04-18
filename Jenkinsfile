@@ -21,7 +21,7 @@ pipeline {
                 )
 
                 {
-                        sh "Some script ${AWS_ACCESS_KEY_ID} and ${AWS_SECRET_KEY_ID}"
+                        sh "Some script ${AWS_ACCESS_KEY_ID} and ${AWS_SECRET_ACCESS_KEY}"
                 }
 
                 dir("jenkins-pipeline") {
