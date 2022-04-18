@@ -16,12 +16,12 @@ pipeline {
                     $class: 'AmazonWebServicesCredentialsBinding', 
                     accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
                     credentialsId: 'AWS-CREDS', 
-                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY',
-                    sessionTokenVaribale: 'AWS_SESSION_TOKEN']]
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                    ]]
                 )
 
                 {
-                        sh "Some script ${AWS_ACCESS_KEY_ID} and ${AWS_ACCESS_KEY_ID}"
+                        sh "Some script ${AWS_ACCESS_KEY_ID} and ${AWS_SECRET_KEY_ID}"
                 }
 
                 dir("jenkins-pipeline") {
