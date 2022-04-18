@@ -24,6 +24,7 @@ pipeline {
                     dir("jenkins-pipeline") {
                     sh 'pwd'
                     sh 'ls -ltr'
+                    sh 'echo Access key is $(AWS_ACCESS_KEY_ID)'
                     sh 'terraform init'
                     sh 'terraform plan'
                     sh 'terraform apply --auto-approve'
