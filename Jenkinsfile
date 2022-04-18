@@ -25,20 +25,12 @@ pipeline {
                     sh 'pwd'
                     sh 'ls -ltr'
                     sh 'terraform init'
+                    sh 'terraform plan'
+                    sh 'terraform apply --auto-approve'
                     }
                 }
             }        
         }
 
-        stage('terraform plan and apply') {
-            
-            steps {
-                dir("jenkins-pipeline") {
-                sh 'terraform plan'
-                sh 'terraform apply --auto-approve'
-                }
-            }
-
-        }
     }
 }
