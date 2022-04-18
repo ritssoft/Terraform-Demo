@@ -8,15 +8,17 @@ pipeline {
                 ID_RSA = credentials('id_rsa') 
 }
 */
-    stages {
-        withCredentials([[
+
+withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding', 
                     accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
                     credentialsId: 'AWS-CREDS', 
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]]
                 )
-        {       
+{ 
+    stages {
+              
         stage('terraform init') {
                     dir("jenkins-pipeline") {
                     sh 'pwd'
@@ -34,7 +36,7 @@ pipeline {
                 }
             }
 
-        }
-        }
+        }        }
     }
+}
 }
