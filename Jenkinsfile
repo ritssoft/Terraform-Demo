@@ -19,15 +19,15 @@ pipeline {
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]]
                 )
-               
-                dir("jenkins-pipeline") {
-                sh 'pwd'
-                sh 'ls -ltr'
-                sh 'terraform init'
-                }
-            }        
+                {
+                    dir("jenkins-pipeline") {
+                    sh 'pwd'
+                    sh 'ls -ltr'
+                    sh 'terraform init'
+                    }
+                }        
+            }
         }
-
         stage('terraform plan and apply') {
             
             steps {
