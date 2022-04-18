@@ -19,11 +19,7 @@ pipeline {
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]]
                 )
-
-                {
-                        sh "Some script ${AWS_ACCESS_KEY_ID} and ${AWS_SECRET_ACCESS_KEY}"
-                }
-
+               
                 dir("jenkins-pipeline") {
                 sh 'pwd'
                 sh 'ls -ltr'
