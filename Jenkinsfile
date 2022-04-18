@@ -12,13 +12,16 @@ pipeline {
                
         stage('terraform init') {
             steps {
-                withCredentials([
-                    AWSAccessKeyId(credentials: 'AWS-CREDS', accessKeyVariable: 'AWS_ACCESS_KEY_ID'), 
-                    AWSSecretKey(credentials: 'AWS-CREDS', secretKeyVariable: 'AWS_ACCESS_KEY_ID' )
-                    ]) {
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding', 
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
+                    credentialsId: 'AWS-CREDS', 
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY',
+                    sessionTokenVaribale: 'AWS_SESSION_TOKEN']]
+                )
 
+                {
                         sh "Some script ${AWS_ACCESS_KEY_ID} and ${AWS_ACCESS_KEY_ID}"
-
                 }
 
                 dir("jenkins-pipeline") {
