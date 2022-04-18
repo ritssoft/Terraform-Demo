@@ -1,0 +1,11 @@
+vpc-cidr-block = "10.0.0.0/16"
+subnet-cidr-blocks = ["10.0.1.0/24","10.0.2.0/24","10.0.3.0/24"]
+az = ["ap-southeast-2a","ap-southeast-2b","ap-southeast-2c"]
+subnet-tags = ["Subnet1","Subnet2","Subnet3"]
+#environment = ["Testing","Pre-Production","Production"]
+env-prefix = "Terraform"
+my-ip = "122.161.74.94/32"
+internet-ip = "0.0.0.0/0"
+instance_type = "t2.micro"
+#key_pair = "Kubernetes-Private-Key-Pair"
+public_key_location = "C:/Users/ritesh.e.agarwal/.ssh/id_rsa.pub"
