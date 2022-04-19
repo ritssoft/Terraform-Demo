@@ -1,4 +1,4 @@
-vm_name = "VM01-Jenkins-Pipeline"
+vm_name = "VM01-Jenkins-Pipeline-aws-role1"
 vpc_name = "VPC-Jenkins-Pipeline"
 vpc-cidr-block = "10.0.0.0/16"
 subnet-cidr-blocks = "10.0.20.0/24"
